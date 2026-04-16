@@ -1,0 +1,42 @@
+{
+  "effect.sulfurcavesplus.corrosion": "Corrosión",
+
+  "entity.sulfurcavesplus.sulfur_spider": "Araña de azufre",
+  "item.sulfurcavesplus.sulfur_spider_spawn_egg": "Generador de araña de azufre",
+
+  "item.minecraft.potion.effect.corrosion": "Poción de corrosión",
+  "item.minecraft.potion.effect.long_corrosion": "Poción de corrosión",
+  "item.minecraft.potion.effect.strong_corrosion": "Poción de corrosión",
+
+  "item.minecraft.splash_potion.effect.corrosion": "Poción arrojadiza de corrosión",
+  "item.minecraft.splash_potion.effect.long_corrosion": "Poción arrojadiza de corrosión",
+  "item.minecraft.splash_potion.effect.strong_corrosion": "Poción arrojadiza de corrosión",
+
+  "item.minecraft.lingering_potion.effect.corrosion": "Poción persistente de corrosión",
+  "item.minecraft.lingering_potion.effect.long_corrosion": "Poción persistente de corrosión",
+  "item.minecraft.lingering_potion.effect.strong_corrosion": "Poción persistente de corrosión",
+
+  "item.minecraft.tipped_arrow.effect.corrosion": "Flecha de corrosión",
+  "item.minecraft.tipped_arrow.effect.long_corrosion": "Flecha de corrosión",
+  "item.minecraft.tipped_arrow.effect.strong_corrosion": "Flecha de corrosión",
+
+  "block.sulfurcavesplus.sulfur_coal_ore": "Mineral de carbón de azufre",
+  "block.sulfurcavesplus.sulfur_iron_ore": "Mineral de hierro de azufre",
+  "block.sulfurcavesplus.sulfur_gold_ore": "Mineral de oro de azufre",
+  "block.sulfurcavesplus.sulfur_copper_ore": "Mineral de cobre de azufre",
+  "block.sulfurcavesplus.sulfur_redstone_ore": "Mineral de redstone de azufre",
+  "block.sulfurcavesplus.sulfur_lapis_ore": "Mineral de lapislázuli de azufre",
+  "block.sulfurcavesplus.sulfur_diamond_ore": "Mineral de diamante de azufre",
+  "block.sulfurcavesplus.sulfur_emerald_ore": "Mineral de esmeralda de azufre",
+
+  "item.sulfurcavesplus.sulfur_coal_ore": "Mineral de carbón de azufre",
+  "item.sulfurcavesplus.sulfur_iron_ore": "Mineral de hierro de azufre",
+  "item.sulfurcavesplus.sulfur_gold_ore": "Mineral de oro de azufre",
+  "item.sulfurcavesplus.sulfur_copper_ore": "Mineral de cobre de azufre",
+  "item.sulfurcavesplus.sulfur_redstone_ore": "Mineral de redstone de azufre",
+  "item.sulfurcavesplus.sulfur_lapis_ore": "Mineral de lapislázuli de azufre",
+  "item.sulfurcavesplus.sulfur_diamond_ore": "Mineral de diamante de azufre",
+  "item.sulfurcavesplus.sulfur_emerald_ore": "Mineral de esmeralda de azufre",
+
+  "subtitles.sulfurcavesplus.corrosion_tick": "Armadura corroyéndose"
+}

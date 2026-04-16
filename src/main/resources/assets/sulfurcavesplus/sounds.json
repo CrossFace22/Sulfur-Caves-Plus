@@ -1,0 +1,13 @@
+{
+  "corrosion_tick": {
+    "subtitle": "subtitles.sulfurcavesplus.corrosion_tick",
+    "sounds": [
+      {
+        "name": "sulfurcavesplus:corrosion_tick",
+        "volume": 0.4,
+        "pitch": 1.0,
+        "type": "file"
+      }
+    ]
+  }
+}

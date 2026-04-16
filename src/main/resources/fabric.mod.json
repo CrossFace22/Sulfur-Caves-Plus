@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "sulfurcavesplus",
+	"version": "${version}",
+	"name": "Sulfur Caves Plus",
+	"description": "A mod that adds new content to the Sulfur Caves biome: Sulfur Spiders, Corrosion and more.",
+	"authors": [
+		"CrossFace22"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/sulfurcavesplus/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.crossface22.sulfurcavesplus.SulfurCavesPlus"
+		],
+		"client": [
+			"net.crossface22.sulfurcavesplus.client.SulfurCavesPlusClient"
+		]
+	},
+	"mixins": [
+		"sulfurcavesplus.mixins.json",
+		{
+			"config": "sulfurcavesplus.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.1",
+		"minecraft": ">=26.2-alpha.1 <26.3-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
