@@ -1,5 +1,5 @@
 **Sulfur Caves Plus** breathes life into the Sulfur Caves biome introduced in Minecraft 26.2.
-It adds a **new status effect**, **Sulfur Spiders**, **Corrosion potions**, and **Sulfur Ore variants** that generate naturally inside sulfur caves terrain.
+It adds a **new status effect**, **Sulfur Spiders**, **Corrosion potions**, and **more ore variants** that generate naturally inside sulfur caves terrain.
 
 ---
 
@@ -71,3 +71,6 @@ A `sulfurcavesplus.json` config file is generated in your config folder on first
 - **Minecraft** 26.2-snapshot-4
 - **Fabric Loader** ≥ 0.19.2
 - **Fabric API**
+
+## 🐛 Found a bug?
+-> [Issues Page](https://github.com/CrossFace22/Sulfur-Caves-Plus/issues)
