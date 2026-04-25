@@ -37,6 +37,7 @@ public class SulfurCavesPlus implements ModInitializer {
         ScpSounds.register();
         ScpEntities.register();
         ScpBlocks.register();
+        ScpParticleTypes.register();
         ScpPotions.register();
         ScpItems.register();
 
@@ -47,7 +48,7 @@ public class SulfurCavesPlus implements ModInitializer {
 
         FabricPotionBrewingBuilder.BUILD.register(builder -> {
             builder.registerPotionRecipe(Potions.AWKWARD, Ingredient.of(Items.SULFUR), ScpPotions.CORROSION);
-                });
+        });
         FabricPotionBrewingBuilder.BUILD.register(builder -> {
             builder.registerPotionRecipe(ScpPotions.CORROSION, Ingredient.of(Items.REDSTONE), ScpPotions.LONG_CORROSION);
         });

@@ -43,6 +43,23 @@ public final class ScpItems {
                 entries.accept(ScpBlocks.SULFUR_IRON_ORE.asItem()));
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
                 entries.accept(ScpBlocks.SULFUR_GOLD_ORE.asItem()));
+
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_COAL_ORE.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_REDSTONE_ORE.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_LAPIS_ORE.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_DIAMOND_ORE.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_COPPER_ORE.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_EMERALD_ORE.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_IRON_ORE.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(entries ->
+                entries.accept(ScpBlocks.CINNABAR_GOLD_ORE.asItem()));
     }
 
     private ScpItems() {}

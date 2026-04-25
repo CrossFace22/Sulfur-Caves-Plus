@@ -2,6 +2,7 @@
   "values": [
     "minecraft:copper_ore",
     "minecraft:deepslate_copper_ore",
-    "sulfurcavesplus:sulfur_copper_ore"
+    "sulfurcavesplus:sulfur_copper_ore",
+    "sulfurcavesplus:cinnabar_copper_ore"
   ]
 }

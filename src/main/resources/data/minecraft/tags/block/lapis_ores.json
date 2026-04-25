@@ -2,6 +2,7 @@
   "values": [
     "minecraft:lapis_ore",
     "minecraft:deepslate_lapis_ore",
-    "sulfurcavesplus:sulfur_lapis_ore"
+    "sulfurcavesplus:sulfur_lapis_ore",
+    "sulfurcavesplus:cinnabar_lapis_ore"
   ]
 }

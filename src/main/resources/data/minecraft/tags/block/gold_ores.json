@@ -3,6 +3,7 @@
     "minecraft:gold_ore",
     "minecraft:nether_gold_ore",
     "minecraft:deepslate_gold_ore",
-    "sulfurcavesplus:sulfur_gold_ore"
+    "sulfurcavesplus:sulfur_gold_ore",
+    "sulfurcavesplus:cinnabar_gold_ore"
   ]
 }

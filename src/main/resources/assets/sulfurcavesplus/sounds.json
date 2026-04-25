@@ -9,5 +9,14 @@
         "type": "file"
       }
     ]
+  },
+  "geyser_ambient": {
+    "subtitle": "subtitles.sulfurcavesplus.geyser_ambient",
+    "sounds": [
+      {
+        "name": "minecraft:weather.rain",
+        "type": "event"
+      }
+    ]
   }
 }

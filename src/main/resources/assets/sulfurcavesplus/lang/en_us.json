@@ -29,6 +29,15 @@
   "block.sulfurcavesplus.sulfur_diamond_ore": "Sulfur Diamond Ore",
   "block.sulfurcavesplus.sulfur_emerald_ore": "Sulfur Emerald Ore",
 
+  "block.sulfurcavesplus.cinnabar_coal_ore": "Cinnabar Coal Ore",
+  "block.sulfurcavesplus.cinnabar_iron_ore": "Cinnabar Iron Ore",
+  "block.sulfurcavesplus.cinnabar_gold_ore": "Cinnabar Gold Ore",
+  "block.sulfurcavesplus.cinnabar_copper_ore": "Cinnabar Copper Ore",
+  "block.sulfurcavesplus.cinnabar_redstone_ore": "Cinnabar Redstone Ore",
+  "block.sulfurcavesplus.cinnabar_lapis_ore": "Cinnabar Lapis Lazuli Ore",
+  "block.sulfurcavesplus.cinnabar_diamond_ore": "Cinnabar Diamond Ore",
+  "block.sulfurcavesplus.cinnabar_emerald_ore": "Cinnabar Emerald Ore",
+
   "item.sulfurcavesplus.sulfur_coal_ore": "Sulfur Coal Ore",
   "item.sulfurcavesplus.sulfur_iron_ore": "Sulfur Iron Ore",
   "item.sulfurcavesplus.sulfur_gold_ore": "Sulfur Gold Ore",
@@ -38,5 +47,17 @@
   "item.sulfurcavesplus.sulfur_diamond_ore": "Sulfur Diamond Ore",
   "item.sulfurcavesplus.sulfur_emerald_ore": "Sulfur Emerald Ore",
 
-  "subtitles.sulfurcavesplus.corrosion_tick": "Armor corrodes"
+  "item.sulfurcavesplus.cinnabar_coal_ore": "Cinnabar Coal Ore",
+  "item.sulfurcavesplus.cinnabar_iron_ore": "Cinnabar Iron Ore",
+  "item.sulfurcavesplus.cinnabar_gold_ore": "Cinnabar Gold Ore",
+  "item.sulfurcavesplus.cinnabar_copper_ore": "Cinnabar Copper Ore",
+  "item.sulfurcavesplus.cinnabar_redstone_ore": "Cinnabar Redstone Ore",
+  "item.sulfurcavesplus.cinnabar_lapis_ore": "Cinnabar Lapis Lazuli Ore",
+  "item.sulfurcavesplus.cinnabar_diamond_ore": "Cinnabar Diamond Ore",
+  "item.sulfurcavesplus.cinnabar_emerald_ore": "Cinnabar Emerald Ore",
+
+  "subtitles.sulfurcavesplus.corrosion_tick": "Armor corrodes",
+  "subtitles.sulfurcavesplus.geyser_ambient": "Geyser roars",
+
+  "block.sulfurcavesplus.geyser_air": "Geyser Air"
 }

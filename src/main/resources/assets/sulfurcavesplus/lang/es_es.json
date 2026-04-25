@@ -29,6 +29,15 @@
   "block.sulfurcavesplus.sulfur_diamond_ore": "Mena de diamante de azufre",
   "block.sulfurcavesplus.sulfur_emerald_ore": "Mena de esmeralda de azufre",
 
+  "block.sulfurcavesplus.cinnabar_coal_ore": "Mena de carbón de cinabrio",
+  "block.sulfurcavesplus.cinnabar_iron_ore": "Mena de hierro de cinabrio",
+  "block.sulfurcavesplus.cinnabar_gold_ore": "Mena de oro de cinabrio",
+  "block.sulfurcavesplus.cinnabar_copper_ore": "Mena de cobre de cinabrio",
+  "block.sulfurcavesplus.cinnabar_redstone_ore": "Mena de redstone de cinabrio",
+  "block.sulfurcavesplus.cinnabar_lapis_ore": "Mena de lapislázuli de cinabrio",
+  "block.sulfurcavesplus.cinnabar_diamond_ore": "Mena de diamante de cinabrio",
+  "block.sulfurcavesplus.cinnabar_emerald_ore": "Mena de esmeralda de cinabrio",
+
   "item.sulfurcavesplus.sulfur_coal_ore": "Mena de carbón de azufre",
   "item.sulfurcavesplus.sulfur_iron_ore": "Mena de hierro de azufre",
   "item.sulfurcavesplus.sulfur_gold_ore": "Mena de oro de azufre",
@@ -38,5 +47,17 @@
   "item.sulfurcavesplus.sulfur_diamond_ore": "Mena de diamante de azufre",
   "item.sulfurcavesplus.sulfur_emerald_ore": "Mena de esmeralda de azufre",
 
-  "subtitles.sulfurcavesplus.corrosion_tick": "Armadura corroyéndose"
+  "item.sulfurcavesplus.cinnabar_coal_ore": "Mena de carbón de cinabrio",
+  "item.sulfurcavesplus.cinnabar_iron_ore": "Mena de hierro de cinabrio",
+  "item.sulfurcavesplus.cinnabar_gold_ore": "Mena de oro de cinabrio",
+  "item.sulfurcavesplus.cinnabar_copper_ore": "Mena de cobre de cinabrio",
+  "item.sulfurcavesplus.cinnabar_redstone_ore": "Mena de redstone de cinabrio",
+  "item.sulfurcavesplus.cinnabar_lapis_ore": "Mena de lapislázuli de cinabrio",
+  "item.sulfurcavesplus.cinnabar_diamond_ore": "Mena de diamante de cinabrio",
+  "item.sulfurcavesplus.cinnabar_emerald_ore": "Mena de esmeralda de cinabrio",
+
+  "subtitles.sulfurcavesplus.corrosion_tick": "Armadura corroyéndose",
+  "subtitles.sulfurcavesplus.geyser_ambient": "Géiser rugiendo",
+
+  "block.sulfurcavesplus.geyser_air": "Aire de Géiser"
 }

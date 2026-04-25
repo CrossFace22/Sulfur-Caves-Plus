@@ -2,6 +2,7 @@
   "values": [
     "minecraft:diamond_ore",
     "minecraft:deepslate_diamond_ore",
-    "sulfurcavesplus:sulfur_diamond_ore"
+    "sulfurcavesplus:sulfur_diamond_ore",
+    "sulfurcavesplus:cinnabar_diamond_ore"
   ]
 }

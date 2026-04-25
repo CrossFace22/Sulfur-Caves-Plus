@@ -4,17 +4,21 @@
     "minecraft:diamond_ore",
     "minecraft:deepslate_diamond_ore",
     "sulfurcavesplus:sulfur_diamond_ore",
+    "sulfurcavesplus:cinnabar_diamond_ore",
     "minecraft:emerald_ore",
     "minecraft:deepslate_emerald_ore",
     "sulfurcavesplus:sulfur_emerald_ore",
+    "sulfurcavesplus:cinnabar_emerald_ore",
     "minecraft:emerald_block",
     "minecraft:gold_block",
     "minecraft:raw_gold_block",
     "minecraft:gold_ore",
     "minecraft:deepslate_gold_ore",
     "sulfurcavesplus:sulfur_gold_ore",
+    "sulfurcavesplus:cinnabar_gold_ore",
     "minecraft:redstone_ore",
     "minecraft:deepslate_redstone_ore",
-    "sulfurcavesplus:sulfur_redstone_ore"
+    "sulfurcavesplus:sulfur_redstone_ore",
+    "sulfurcavesplus:cinnabar_redstone_ore"
   ]
 }

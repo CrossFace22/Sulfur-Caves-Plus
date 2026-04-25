@@ -39,6 +39,18 @@
           "predicate_type": "minecraft:tag_match",
           "tag": "sulfurcavesplus:sulfur_ore_replaceables"
         }
+      },
+      {
+        "state": {
+          "Name": "sulfurcavesplus:cinnabar_redstone_ore",
+          "Properties": {
+            "lit": "false"
+          }
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "sulfurcavesplus:cinnabar_ore_replaceables"
+        }
       }
     ]
   }

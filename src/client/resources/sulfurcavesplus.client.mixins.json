@@ -2,7 +2,9 @@
 	"required": true,
 	"package": "net.crossface22.sulfurcavesplus.client.mixin",
 	"compatibilityLevel": "JAVA_25",
-	"client": [],
+	"client": [
+		"GeyserPlayerMixin"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	}

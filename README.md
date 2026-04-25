@@ -39,9 +39,15 @@ Three new potions:
 
 ---
 
-## Sulfur Ore Variants
+## Sulfur Geysers
 
-Eight new ore blocks generate inside **sulfur** terrain.
+Using Water, Potent Sulfur, and Magma Blocks, you can create a **Geyser**. When you step into a Geyser, you'll be propelled upward.
+
+---
+
+## Sulfur & Cinnabar Ore Variants
+
+**16 new ore blocks** generate inside Sulfur Caves terrain.
 
 ---
 
@@ -62,6 +68,6 @@ A `sulfurcavesplus.json` config file is generated in your config folder on first
 
 ## 📦 Requirements
 
-- **Minecraft** 26.2-snapshot-3 (Java Edition)
-- **Fabric Loader** 0.16+
+- **Minecraft** 26.2-snapshot-4
+- **Fabric Loader** ≥ 0.19.2
 - **Fabric API**

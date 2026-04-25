@@ -11,20 +11,19 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 
 public final class ScpEntities {
+
     public static EntityType<SulfurSpiderEntity> SULFUR_SPIDER;
 
     public static void register() {
-        Identifier id = Identifier.fromNamespaceAndPath(SulfurCavesPlus.MOD_ID, "sulfur_spider");
-        ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, id);
 
         SULFUR_SPIDER = Registry.register(
                 BuiltInRegistries.ENTITY_TYPE,
-                id,
+                Identifier.fromNamespaceAndPath(SulfurCavesPlus.MOD_ID, "sulfur_spider"),
                 EntityType.Builder.<SulfurSpiderEntity>of(SulfurSpiderEntity::new, MobCategory.MONSTER)
                         .sized(0.7F, 0.5F)
                         .eyeHeight(0.45F)
                         .clientTrackingRange(8)
-                        .build(key)
+                        .build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(SulfurCavesPlus.MOD_ID, "sulfur_spider")))
         );
     }
 
