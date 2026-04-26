@@ -1,9 +1,9 @@
 **Sulfur Caves Plus** breathes life into the Sulfur Caves biome introduced in Minecraft 26.2.
-It adds a **new status effect**, **Sulfur Spiders**, **Corrosion potions**, and **Sulfur Ore variants** that generate naturally inside sulfur caves terrain.
+It adds a **new status effect**, **Sulfur Spiders**, **Corrosion potions**, and **more ore variants** that generate naturally inside sulfur caves terrain.
 
 ---
 
-## Corrosion Effect
+## ![Corrosion Effect](https://cdn.modrinth.com/data/cached_images/8707750c8e830d8fbbc650972e9683484859563c.png) Corrosion Effect
 
 A new **harmful status effect** that breaks your armor over time.
 
@@ -12,9 +12,7 @@ A new **harmful status effect** that breaks your armor over time.
 
 ---
 
-## Sulfur Spider
-
-![Sulfur Spider](https://cdn.modrinth.com/data/cached_images/f438a3dfad58cb9ffa8a719bd653945a61d26e6f.png)
+## ![Sulfur Spider](https://cdn.modrinth.com/data/cached_images/bcbf356592f42358d98d260c78ce4091b9fa07b5.png) Sulfur Spider
 
 A venomous spider variant that lurks exclusively in the Sulfur Caves biome.
 It carries a **sulfur spike on its tail** and injects **Corrosion** on every bite.
@@ -27,7 +25,7 @@ It carries a **sulfur spike on its tail** and injects **Corrosion** on every bit
 
 ---
 
-## Potions of Corrosion
+## ![Corrosion Potion](https://cdn.modrinth.com/data/cached_images/9675dbe49bf9161a6e3ebaf3ec39db3500188a7f.png) Potions of Corrosion
 
 Three new potions:
 
@@ -39,13 +37,13 @@ Three new potions:
 
 ---
 
-## Sulfur Geysers
+## ![Sulfur Geyser](https://cdn.modrinth.com/data/cached_images/931c91ab59173eed395bbf4ac8f2662327f80333_0.webp) Sulfur Geysers
 
 Using Water, Potent Sulfur, and Magma Blocks, you can create a **Geyser**. When you step into a Geyser, you'll be propelled upward.
 
 ---
 
-## Sulfur & Cinnabar Ore Variants
+## ![Cinnabar Diamond Ore](https://cdn.modrinth.com/data/cached_images/8c6bbbf25b1e91f04f77aa044853089ab90a1ae6_0.webp) Sulfur & Cinnabar Ore Variants
 
 **16 new ore blocks** generate inside Sulfur Caves terrain.
 
@@ -71,3 +69,6 @@ A `sulfurcavesplus.json` config file is generated in your config folder on first
 - **Minecraft** 26.2-snapshot-4
 - **Fabric Loader** ≥ 0.19.2
 - **Fabric API**
+
+## 🐛 Found a bug?
+-> [Issues Page](https://github.com/CrossFace22/Sulfur-Caves-Plus/issues)

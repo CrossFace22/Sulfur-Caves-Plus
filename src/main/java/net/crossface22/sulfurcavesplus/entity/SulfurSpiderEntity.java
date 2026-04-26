@@ -3,6 +3,7 @@ package net.crossface22.sulfurcavesplus.entity;
 import net.crossface22.sulfurcavesplus.ScpConfig;
 import net.crossface22.sulfurcavesplus.registry.ScpEffects;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -40,7 +41,7 @@ public class SulfurSpiderEntity extends CaveSpider {
                     default     -> 0;
                 };
                 if (duration > 0) {
-                    living.addEffect(new MobEffectInstance(ScpEffects.CORROSION, duration, 0), this);
+                    if(level.getDifficulty() != Difficulty.EASY || cfg.spiderCorrosionDurationEasy > 0) living.addEffect(new MobEffectInstance(ScpEffects.CORROSION, duration, 0), this);
                     living.addEffect(new MobEffectInstance(MobEffects.NAUSEA, duration, 0), this);
                 }
             }

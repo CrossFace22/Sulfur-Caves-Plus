@@ -16,6 +16,8 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 
+import static net.minecraft.world.Difficulty.*;
+
 public class CorrosionEffect extends MobEffect {
 
     private static final EquipmentSlot[] ARMOR_SLOTS = {
@@ -34,8 +36,13 @@ public class CorrosionEffect extends MobEffect {
     @Override
     public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity entity, int amplifier) {
         ScpConfig cfg = ScpConfig.INSTANCE;
+        int tickInterval = switch (serverLevel.getDifficulty()) {
+            case EASY, PEACEFUL -> cfg.corrosionTickInterval + 6;
+            case NORMAL -> cfg.corrosionTickInterval + 3;
+            case HARD -> cfg.corrosionTickInterval;
+        };
 
-        if (entity.tickCount % cfg.corrosionTickInterval != 0) {
+        if (entity.tickCount % tickInterval != 0) {
             return true;
         }
 
