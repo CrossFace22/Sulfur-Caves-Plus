@@ -1,5 +1,5 @@
 **Sulfur Caves Plus** breathes life into the Sulfur Caves biome introduced in Minecraft 26.2.
-It adds a **new status effect**, **Sulfur Spiders**, **Corrosion potions**, and **more ore variants** that generate naturally inside sulfur caves terrain.
+It adds a **new status effect**, **Sulfur Spiders**, **Corrosion potions**, volcanic **Lava Geysers**, and **more ore variants** that generate naturally inside sulfur caves terrain.
 
 ---
 
@@ -39,7 +39,23 @@ Three new potions:
 
 ## ![Sulfur Geyser](https://cdn.modrinth.com/data/cached_images/931c91ab59173eed395bbf4ac8f2662327f80333_0.webp) Sulfur Geysers
 
-Using Water, Potent Sulfur, and Magma Blocks, you can create a **Geyser**. When you step into a Geyser, you'll be propelled upward.
+Sulfur Geysers are now part of **Vanilla Minecraft**.
+
+**Sulfur Caves Plus enhances their behavior:**
+- When powered by **Redstone**, geysers remain active indefinitely.
+- Geysers no longer emit noxious gas or apply negative effects by default, focusing purely on their propulsion behavior.
+- Noxious gas particles and negative effects can be restored with a gamerule.
+
+### Lava Geysers
+
+A volcanic geyser variant created when **Potent Sulfur** has **lava above it** and a **Magma Block below it**.
+
+Lava Geysers:
+- Launch entities upward like regular geysers.
+- Deal fire damage and ignite entities.
+- Emit dark volcanic particles with subtle ashy-orange magma tones.
+- Spawn lava pops that scale with the geyser height.
+- Generate naturally in **Basalt Deltas**.
 
 ---
 
@@ -49,7 +65,14 @@ Using Water, Potent Sulfur, and Magma Blocks, you can create a **Geyser**. When 
 
 ---
 
-## 🔧 Configuration
+## WANT MORE?
+
+Expand your *Chaos Cubed* experience with **Better Sulfur Cubes**
+-> https://modrinth.com/mod/better-sulfur-cubes
+
+---
+
+## Configuration
 
 A `sulfurcavesplus.json` config file is generated in your config folder on first launch.
 
@@ -61,14 +84,23 @@ A `sulfurcavesplus.json` config file is generated in your config folder on first
 | `spiderCorrosionDurationNormal` | `100` | Corrosion ticks applied on Normal |
 | `spiderCorrosionDurationHard` | `200` | Corrosion ticks applied on Hard |
 | `potentSulfurEffectDuration` | `200` | Duration of Potent Sulfur block effect |
+| `sulfurVeinsGenerateUnderLava` | `true` | Enables natural Lava Geyser generation in Basalt Deltas |
+
+### Gamerules
+
+| Gamerule | Default | Description |
+|---|---|---|
+| `sulfurcavesplus:noxious_gas_on_geysers` | `false` | Enables noxious gas particles and negative effects on geysers |
+| `sulfurcavesplus:lava_geysers_damage` | `true` | Enables fire damage and ignition from Lava Geysers |
 
 ---
 
-## 📦 Requirements
+## Requirements
 
-- **Minecraft** 26.2-snapshot-4
-- **Fabric Loader** ≥ 0.19.2
+- **Minecraft** 26.2-snapshot-5
+- **Fabric Loader** >= 0.19.2
 - **Fabric API**
 
-## 🐛 Found a bug?
+## Found a bug?
+
 -> [Issues Page](https://github.com/CrossFace22/Sulfur-Caves-Plus/issues)
