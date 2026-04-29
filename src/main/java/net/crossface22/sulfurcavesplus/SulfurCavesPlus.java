@@ -3,15 +3,26 @@ package net.crossface22.sulfurcavesplus;
 import net.crossface22.sulfurcavesplus.entity.SulfurSpiderEntity;
 import net.crossface22.sulfurcavesplus.registry.*;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FabricPotionBrewingBuilder;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,9 +48,16 @@ public class SulfurCavesPlus implements ModInitializer {
         ScpSounds.register();
         ScpEntities.register();
         ScpBlocks.register();
-        ScpParticleTypes.register();
         ScpPotions.register();
         ScpItems.register();
+        ScpFeatures.register();
+        ScpGameRules.register();
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.includeByKey(Biomes.BASALT_DELTAS),
+                GenerationStep.Decoration.UNDERGROUND_ORES,
+                ScpPlacedFeatures.SULFUR_VEIN_PLACED
+        );
 
         FabricDefaultAttributeRegistry.register(
                 ScpEntities.SULFUR_SPIDER,

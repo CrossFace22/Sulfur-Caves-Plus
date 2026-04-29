@@ -57,7 +57,9 @@
   "item.sulfurcavesplus.cinnabar_emerald_ore": "Mena de esmeralda de cinabrio",
 
   "subtitles.sulfurcavesplus.corrosion_tick": "Armadura corroyéndose",
-  "subtitles.sulfurcavesplus.geyser_ambient": "Géiser rugiendo",
 
-  "block.sulfurcavesplus.geyser_air": "Aire de Géiser"
+  "gamerule.sulfurcavesplus.lava_geyser_damage": "Daño de géiser de lava",
+  "gamerule.sulfurcavesplus.lava_geyser_damage.description": "Controla si los géiseres de lava infligen daño de fuego a las entidades.",
+  "gamerule.sulfurcavesplus.noxious_gas_on_geysers": "Gas venenoso en géiseres",
+  "gamerule.sulfurcavesplus.noxious_gas_on_geysers.description": "Controla si se libera gas venenoso de los géiseres."
 }

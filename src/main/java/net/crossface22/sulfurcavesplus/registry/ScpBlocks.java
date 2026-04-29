@@ -1,7 +1,6 @@
 package net.crossface22.sulfurcavesplus.registry;
 
 import net.crossface22.sulfurcavesplus.SulfurCavesPlus;
-import net.crossface22.sulfurcavesplus.block.GeyserAirBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -18,8 +17,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
 public final class ScpBlocks {
-
-    public static Block GEYSER_AIR;
 
     public static Block SULFUR_COAL_ORE;
     public static Block SULFUR_IRON_ORE;
@@ -40,8 +37,6 @@ public final class ScpBlocks {
     public static Block CINNABAR_EMERALD_ORE;
 
     public static void register() {
-        GEYSER_AIR = geyserAir("geyser_air");
-
         SULFUR_COAL_ORE     = sulfurOre("sulfur_coal_ore",     UniformInt.of(0, 2),  Blocks.COAL_ORE);
         SULFUR_IRON_ORE     = sulfurOre("sulfur_iron_ore",     ConstantInt.of(0),    Blocks.IRON_ORE);
         SULFUR_GOLD_ORE     = sulfurOre("sulfur_gold_ore",     ConstantInt.of(0),    Blocks.GOLD_ORE);
@@ -59,22 +54,6 @@ public final class ScpBlocks {
         CINNABAR_LAPIS_ORE    = cinnabarOre("cinnabar_lapis_ore",    UniformInt.of(1, 5),  Blocks.LAPIS_ORE);
         CINNABAR_DIAMOND_ORE  = cinnabarOre("cinnabar_diamond_ore",  UniformInt.of(3, 7),  Blocks.DIAMOND_ORE);
         CINNABAR_EMERALD_ORE  = cinnabarOre("cinnabar_emerald_ore",  UniformInt.of(3, 7),  Blocks.EMERALD_ORE);
-    }
-
-    private static Block geyserAir(String name) {
-        Identifier id = Identifier.fromNamespaceAndPath(SulfurCavesPlus.MOD_ID, name);
-        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
-        return Registry.register(
-                BuiltInRegistries.BLOCK, id,
-                new GeyserAirBlock(
-                        BlockBehaviour.Properties.of()
-                                .setId(blockKey)
-                                .noCollision()
-                                .noLootTable()
-                                .replaceable()
-                                .pushReaction(PushReaction.DESTROY)
-                )
-        );
     }
 
     private static Block sulfurOre(String name, IntProvider xp, Block baseOre) {

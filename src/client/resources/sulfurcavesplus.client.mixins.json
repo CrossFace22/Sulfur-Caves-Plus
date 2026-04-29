@@ -3,7 +3,8 @@
 	"package": "net.crossface22.sulfurcavesplus.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"GeyserPlayerMixin"
+		"GeyserBaseParticleMixin",
+		"GeyserPlumeParticleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

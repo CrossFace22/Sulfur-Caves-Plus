@@ -57,7 +57,9 @@
   "item.sulfurcavesplus.cinnabar_emerald_ore": "Cinnabar Emerald Ore",
 
   "subtitles.sulfurcavesplus.corrosion_tick": "Armor corrodes",
-  "subtitles.sulfurcavesplus.geyser_ambient": "Geyser roars",
 
-  "block.sulfurcavesplus.geyser_air": "Geyser Air"
+  "gamerule.sulfurcavesplus.lava_geyser_damage": "Lava Geyser Damage",
+  "gamerule.sulfurcavesplus.lava_geyser_damage.description": "Controls whether lava geysers deal fire damage to entities within them.",
+  "gamerule.sulfurcavesplus.noxious_gas_on_geysers": "Noxious Gas on Geysers",
+  "gamerule.sulfurcavesplus.noxious_gas_on_geysers.description": "Controls whether noxious gas is released from geysers."
 }

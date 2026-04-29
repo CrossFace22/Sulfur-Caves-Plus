@@ -30,6 +30,9 @@ public final class ScpConfig {
     // Potent Sulfur Gas
     public int potentSulfurEffectDuration = 80;
 
+    // Worldgen
+    public boolean sulfurVeinsGenerateUnderBasaltDeltas = true;
+
     private static ScpConfig load() {
         if (Files.exists(PATH)) {
             try (Reader r = Files.newBufferedReader(PATH)) {
