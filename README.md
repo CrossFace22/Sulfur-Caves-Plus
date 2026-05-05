@@ -97,7 +97,7 @@ A `sulfurcavesplus.json` config file is generated in your config folder on first
 
 ## Requirements
 
-- **Minecraft** 26.2-snapshot-5
+- **Minecraft** 26.2-snapshot-6
 - **Fabric Loader** >= 0.19.2
 - **Fabric API**
 
