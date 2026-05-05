@@ -3,7 +3,7 @@ package net.crossface22.sulfurcavesplus.client;
 import net.minecraft.util.RandomSource;
 
 public final class LavaGeyserParticleColors {
-    private static final float EMBER_CHANCE = 0.18F;
+    private static final float EMBER_CHANCE = 0.08F;
 
     private LavaGeyserParticleColors() {
     }
@@ -11,9 +11,9 @@ public final class LavaGeyserParticleColors {
     public static float[] pick(RandomSource random) {
         if (random.nextFloat() < EMBER_CHANCE) {
             return new float[] {
-                    0.42F + random.nextFloat() * 0.14F,
-                    0.24F + random.nextFloat() * 0.08F,
-                    0.14F + random.nextFloat() * 0.05F
+                    0.34F + random.nextFloat() * 0.08F,
+                    0.28F + random.nextFloat() * 0.05F,
+                    0.22F + random.nextFloat() * 0.04F
             };
         }
 

@@ -163,8 +163,8 @@ public class PotentSulfurBlockEntityMixin {
             method = "spawnGeyserParticle",
             at = @At("TAIL")
     )
-    private static void scp$spawnFireParticles(Level level, Vec3 sulfurPos, Vec3 sourcePos, CallbackInfo ci) {
-        BlockPos pos = BlockPos.containing(sourcePos);
+    private static void scp$spawnFireParticles(Level level, BlockPos sulfurPos, BlockPos sourcePos, CallbackInfo ci) {
+        BlockPos pos = sourcePos;
 
         boolean isLavaGeyser = false;
         for (int i = -2; i <= 3; i++) {
@@ -176,16 +176,18 @@ public class PotentSulfurBlockEntityMixin {
 
         if (!isLavaGeyser) return;
 
-        BlockPos sulfurBlockPos = BlockPos.containing(sulfurPos);
         int lavaSources = 0;
         for (int i = 1; i <= 4; i++) {
-            if (level.getFluidState(sulfurBlockPos.above(i)).isSourceOfType(Fluids.LAVA)) {
+            if (level.getFluidState(sulfurPos.above(i)).isSourceOfType(Fluids.LAVA)) {
                 lavaSources++;
             }
         }
         lavaSources = Math.max(1, lavaSources);
 
-        double height = Math.max(1.0, sourcePos.y - sulfurPos.y);
+        Vec3 sulfurCenter = Vec3.atCenterOf(sulfurPos);
+        Vec3 sourceCenter = Vec3.atCenterOf(sourcePos);
+
+        double height = Math.max(1.0, sourceCenter.y - sulfurCenter.y);
         double heightScale = lavaSources / 4.0;
         double plumeHeight = height + 2.5 + (heightScale * 5.5);
 
@@ -201,9 +203,9 @@ public class PotentSulfurBlockEntityMixin {
 
             level.addParticle(
                     ParticleTypes.LAVA,
-                    sourcePos.x + rx,
-                    sourcePos.y + randomYOffset,
-                    sourcePos.z + rz,
+                    sourceCenter.x + rx,
+                    sourceCenter.y + randomYOffset,
+                    sourceCenter.z + rz,
                     rx * 0.01,
                     0.06 + (heightScale * 0.18) + level.getRandom().nextDouble() * 0.10,
                     rz * 0.01
