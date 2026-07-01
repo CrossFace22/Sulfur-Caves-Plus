@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "pig_on_geyser": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "minecraft:vehicle": {
+            "minecraft:entity_type": "minecraft:pig",
+            "sulfurcavesplus:in_geyser": true
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.husbandry.steamed_hams.description"
+    },
+    "icon": {
+      "id": "minecraft:porkchop"
+    },
+    "title": {
+      "translate": "advancements.husbandry.steamed_hams.title"
+    }
+  },
+  "requirements": [
+    [
+      "pig_on_geyser"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

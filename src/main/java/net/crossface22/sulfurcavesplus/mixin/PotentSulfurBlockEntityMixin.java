@@ -2,24 +2,30 @@ package net.crossface22.sulfurcavesplus.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
 import net.crossface22.sulfurcavesplus.ScpConfig;
+import net.crossface22.sulfurcavesplus.SulfurCavesPlus;
 import net.crossface22.sulfurcavesplus.registry.ScpEffects;
 import net.crossface22.sulfurcavesplus.registry.ScpGameRules;
+import net.crossface22.sulfurcavesplus.util.ScpGeyserTracker;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.PotentSulfurBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.entity.PotentSulfurBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.PotentSulfurState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -33,40 +39,24 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class PotentSulfurBlockEntityMixin {
 
     @Unique
-    private boolean wasPowered = false;
+    private static final TagKey<Block> SCP_PASSABLE_BLOCKS = TagKey.create(
+            Registries.BLOCK,
+            Identifier.fromNamespaceAndPath(SulfurCavesPlus.MOD_ID, "geyser_passable_blocks")
+    );
+
+    @Unique
+    private static boolean scp$isGeyserParticlePassableBlock(BlockState state) {
+        if (state.is(SCP_PASSABLE_BLOCKS)) {
+            return true;
+        }
+
+        return state.getBlock() instanceof TrapDoorBlock
+                && state.getValue(TrapDoorBlock.OPEN);
+    }
 
     @Shadow
     private static BlockPos findNoxiousGasSourceBlock(Level level, BlockPos origin) {
         return null;
-    }
-
-    @Unique
-    private static final ThreadLocal<Boolean> scp$blockEffects = ThreadLocal.withInitial(() -> false);
-
-    @Unique
-    private static boolean scp$isGeyser(Level level, BlockPos pos) {
-        return level.getBlockState(pos.below()).is(Blocks.MAGMA_BLOCK);
-    }
-
-    @Unique
-    private static boolean scp$noxiousGasOnGeysers(Level level) {
-        return level instanceof ServerLevel serverLevel && serverLevel.getGameRules().get(ScpGameRules.NOXIOUS_GAS_ON_GEYSERS);
-    }
-
-    @Inject(
-            method = "lambda$static$0", // SERVER_NAUSEA_EFFECT_TICKER
-            at = @At("HEAD")
-    )
-    private static void scp$markIfGeyser(Level level, BlockPos pos, BlockState state, PotentSulfurBlockEntity entity, CallbackInfo ci) {
-        scp$blockEffects.set(scp$isGeyser(level, pos));
-    }
-
-    @Inject(
-            method = "lambda$static$0", // SERVER_NAUSEA_EFFECT_TICKER
-            at = @At("TAIL")
-    )
-    private static void scp$clearFlag(Level level, BlockPos pos, BlockState state, PotentSulfurBlockEntity entity, CallbackInfo ci) {
-        scp$blockEffects.set(false);
     }
 
     @Inject(
@@ -76,12 +66,15 @@ public class PotentSulfurBlockEntityMixin {
     )
     private static void scp$allowLava(Level level, BlockPos origin, CallbackInfoReturnable<BlockPos> cir) {
 
-        if (!level.getBlockState(origin.below()).is(Blocks.MAGMA_BLOCK)) {
+        boolean hasMagmaBelow = level.getBlockState(origin.below()).is(Blocks.MAGMA_BLOCK);
+        boolean hasLavaBelow = level.getFluidState(origin.below()).isSourceOfType(Fluids.LAVA);
+
+        if (!hasMagmaBelow && !hasLavaBelow) {
             return;
         }
 
         int maxY = origin.getY() + 5;
-        BlockPos.MutableBlockPos pos = origin.above(2).mutable();
+        BlockPos.MutableBlockPos pos = origin.above().mutable();
 
         boolean foundLava = false;
 
@@ -95,19 +88,14 @@ public class PotentSulfurBlockEntityMixin {
                 continue;
             }
 
-            if (foundLava && level.getBlockState(pos).isAir()) {
+            BlockState state = level.getBlockState(pos);
+
+            if (foundLava && (state.isAir() || scp$isGeyserParticlePassableBlock(state))) {
                 cir.setReturnValue(pos.immutable());
                 return;
             }
 
             break;
-        }
-    }
-
-    @Inject(method = "applyNauseaEffect", at = @At("HEAD"), cancellable = true)
-    private static void scp$cancelIfGeyser(LivingEntity entity, CallbackInfo ci) {
-        if (scp$blockEffects.get() && !scp$noxiousGasOnGeysers(entity.level())) {
-            ci.cancel();
         }
     }
 
@@ -119,44 +107,68 @@ public class PotentSulfurBlockEntityMixin {
     }
 
     @Inject(
-            method = "lambda$static$1", // CLIENT_NOXIOUS_GAS_TICKER
+            method = "isGeyserPassableBlock",
             at = @At("HEAD"),
             cancellable = true
     )
-    private static void scp$noGasParticles(Level level, BlockPos pos, BlockState state, PotentSulfurBlockEntity entity, CallbackInfo ci) {
-        if (scp$isGeyser(level, pos) && !scp$noxiousGasOnGeysers(level)) {
-            ci.cancel();
+    private static void scp$allowGeyserThroughCopperGrates(
+            BlockState state,
+            Level level,
+            BlockPos pos,
+            CollisionContext context,
+            CallbackInfoReturnable<Boolean> cir
+    ) {
+        if (scp$isGeyserParticlePassableBlock(state)) {
+            cir.setReturnValue(true);
         }
     }
 
-    @Inject(
-            method = "lambda$static$3", // SERVER_WAITING_COUNTDOWN_TICKER
-            at = @At("HEAD"),
-            cancellable = true
-    )
-    private static void onServerTick(Level level, BlockPos pos, BlockState state, PotentSulfurBlockEntity entity, CallbackInfo ci) {
+    @Unique
+    private static double scp$getLavaParticlePlumeLimit(Level level, BlockPos sourcePos, double fallbackHeight) {
+        double sourceY = Vec3.atCenterOf(sourcePos).y;
 
-        PotentSulfurBlockEntityMixin self = (PotentSulfurBlockEntityMixin)(Object) entity;
+        int maxCheck = Math.max(1, (int) Math.ceil(fallbackHeight) + 2);
+        CollisionContext context = CollisionContext.positionContext((double) sourcePos.below().getY());
 
-        boolean powered = level.hasNeighborSignal(pos);
+        for (int i = 0; i <= maxCheck; i++) {
+            BlockPos currentPos = sourcePos.above(i);
+            BlockState state = level.getBlockState(currentPos);
 
-        if (powered) {
-
-            if (state.getValue(PotentSulfurBlock.STATE) != PotentSulfurState.ERUPTING) {
-                level.setBlock(pos, state.setValue(PotentSulfurBlock.STATE, PotentSulfurState.ERUPTING), 3);
+            if (scp$isBlockPassableForLavaParticles(state, level, currentPos, context)) {
+                continue;
             }
 
-            entity.waitingCountdown = entity.geyserEruptionTime;
-
-            self.wasPowered = true;
-            ci.cancel();
-            return;
+            double blockerBottomY = currentPos.getY();
+            return Math.max(0.15D, blockerBottomY - sourceY - 0.05D);
         }
 
-        if (!powered && self.wasPowered) {
-            entity.waitingCountdown = entity.geyserEruptionTime;
-            self.wasPowered = false;
+        return fallbackHeight;
+    }
+
+    @Unique
+    private static boolean scp$isBlockPassableForLavaParticles(
+            BlockState state,
+            Level level,
+            BlockPos pos,
+            CollisionContext context
+    ) {
+        if (state.isAir()) {
+            return true;
         }
+
+        if (state.is(Blocks.WATER)) {
+            return true;
+        }
+
+        if (level.getFluidState(pos).isSourceOfType(Fluids.LAVA)) {
+            return true;
+        }
+
+        if (scp$isGeyserParticlePassableBlock(state)) {
+            return true;
+        }
+
+        return state.getCollisionShape(level, pos, context).isEmpty();
     }
 
     @Inject(
@@ -167,11 +179,17 @@ public class PotentSulfurBlockEntityMixin {
         BlockPos pos = sourcePos;
 
         boolean isLavaGeyser = false;
-        for (int i = -2; i <= 3; i++) {
-            if (level.getFluidState(pos.offset(0, i, 0)).is(net.minecraft.world.level.material.Fluids.LAVA)) {
+        BlockPos check = sourcePos;
+        for (int i = 0; i <= 16; i++) {
+            var fluid = level.getFluidState(check);
+            if (fluid.isSourceOfType(Fluids.WATER)) {
+                break;
+            }
+            if (fluid.isSourceOfType(Fluids.LAVA)) {
                 isLavaGeyser = true;
                 break;
             }
+            check = check.below();
         }
 
         if (!isLavaGeyser) return;
@@ -190,6 +208,7 @@ public class PotentSulfurBlockEntityMixin {
         double height = Math.max(1.0, sourceCenter.y - sulfurCenter.y);
         double heightScale = lavaSources / 4.0;
         double plumeHeight = height + 2.5 + (heightScale * 5.5);
+        plumeHeight = Math.min(plumeHeight, scp$getLavaParticlePlumeLimit(level, sourcePos, plumeHeight));
 
         int lavaCount = 5 + level.getRandom().nextInt(8);
 
@@ -215,7 +234,7 @@ public class PotentSulfurBlockEntityMixin {
     }
 
     @Inject(
-            method = "lambda$static$4", // SERVER_LAUNCH_ENTITY_TICKER
+            method = "lambda$static$5",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/Entity;addDeltaMovement(Lnet/minecraft/world/phys/Vec3;)V", shift = At.Shift.AFTER)
     )
     private static void scp$applyLavaGeyserDamage(Level level, BlockPos pos, BlockState state, PotentSulfurBlockEntity entity, CallbackInfo ci, @Local Entity entityToBeLaunched) {
@@ -234,11 +253,30 @@ public class PotentSulfurBlockEntityMixin {
         }
     }
 
-    @Redirect(
-            method = "lambda$static$4", // SERVER_LAUNCH_ENTITY_TICKER
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;playSound(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FF)V")
+    @Inject(
+            method = "lambda$static$5",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/world/entity/Entity;checkFallDistanceAccumulation()V",
+                    shift = At.Shift.AFTER
+            )
     )
-    private static void scp$modifyGeyserSound(Level level, Entity entity, BlockPos pos, net.minecraft.sounds.SoundEvent sound, net.minecraft.sounds.SoundSource source, float volume, float pitch, @Local(argsOnly = true) BlockPos origin) {
+    private static void scp$markEntityInsideGeyser(
+            Level level,
+            BlockPos pos,
+            BlockState state,
+            PotentSulfurBlockEntity sulfurEntity,
+            CallbackInfo ci,
+            @Local Entity entityToBeLaunched
+    ) {
+        ScpGeyserTracker.markInsideGeyser(entityToBeLaunched);
+    }
+
+    @Redirect(
+            method = "lambda$static$3",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;playLocalSound(DDDLnet/minecraft/sounds/SoundEvent;Lnet/minecraft/sounds/SoundSource;FFZ)V")
+    )
+    private static void scp$modifyGeyserSound(Level level, double x, double y, double z, net.minecraft.sounds.SoundEvent sound, net.minecraft.sounds.SoundSource source, float volume, float pitch, boolean delay, @Local(argsOnly = true) BlockPos origin) {
 
         boolean isLava = level.getFluidState(origin.above()).is(net.minecraft.world.level.material.Fluids.LAVA);
 
@@ -247,6 +285,6 @@ public class PotentSulfurBlockEntityMixin {
             finalPitch = 0.4F;
         }
 
-        level.playSound(entity, pos, sound, source, volume, finalPitch);
+        level.playLocalSound(x, y, z, sound, source, volume, finalPitch, delay);
     }
 }

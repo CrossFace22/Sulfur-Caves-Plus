@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sulfur_gold_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sulfurcavesplus:sulfur_gold_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sulfurcavesplus:gold_ingot_from_smelting_sulfur_gold_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sulfur_gold_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sulfurcavesplus:gold_ingot_from_smelting_sulfur_gold_ore"
+    ]
+  }
+}

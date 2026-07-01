@@ -1,0 +1,64 @@
+{
+  "effect.sulfurcavesplus.corrosion": "Corrosion",
+
+  "entity.sulfurcavesplus.sulfur_spider": "Sulfur Spider",
+  "item.sulfurcavesplus.sulfur_spider_spawn_egg": "Sulfur Spider Spawn Egg",
+
+  "item.minecraft.potion.effect.corrosion": "Potion of Corrosion",
+  "item.minecraft.potion.effect.long_corrosion": "Potion of Corrosion",
+  "item.minecraft.potion.effect.strong_corrosion": "Potion of Corrosion",
+
+  "item.minecraft.splash_potion.effect.corrosion": "Splash Potion of Corrosion",
+  "item.minecraft.splash_potion.effect.long_corrosion": "Splash Potion of Corrosion",
+  "item.minecraft.splash_potion.effect.strong_corrosion": "Splash Potion of Corrosion",
+
+  "item.minecraft.lingering_potion.effect.corrosion": "Lingering Potion of Corrosion",
+  "item.minecraft.lingering_potion.effect.long_corrosion": "Lingering Potion of Corrosion",
+  "item.minecraft.lingering_potion.effect.strong_corrosion": "Lingering Potion of Corrosion",
+
+  "item.minecraft.tipped_arrow.effect.corrosion": "Arrow of Corrosion",
+  "item.minecraft.tipped_arrow.effect.long_corrosion": "Arrow of Corrosion",
+  "item.minecraft.tipped_arrow.effect.strong_corrosion": "Arrow of Corrosion",
+
+  "block.sulfurcavesplus.sulfur_coal_ore": "Sulfur Coal Ore",
+  "block.sulfurcavesplus.sulfur_iron_ore": "Sulfur Iron Ore",
+  "block.sulfurcavesplus.sulfur_gold_ore": "Sulfur Gold Ore",
+  "block.sulfurcavesplus.sulfur_copper_ore": "Sulfur Copper Ore",
+  "block.sulfurcavesplus.sulfur_redstone_ore": "Sulfur Redstone Ore",
+  "block.sulfurcavesplus.sulfur_lapis_ore": "Sulfur Lapis Lazuli Ore",
+  "block.sulfurcavesplus.sulfur_diamond_ore": "Sulfur Diamond Ore",
+  "block.sulfurcavesplus.sulfur_emerald_ore": "Sulfur Emerald Ore",
+
+  "block.sulfurcavesplus.cinnabar_coal_ore": "Cinnabar Coal Ore",
+  "block.sulfurcavesplus.cinnabar_iron_ore": "Cinnabar Iron Ore",
+  "block.sulfurcavesplus.cinnabar_gold_ore": "Cinnabar Gold Ore",
+  "block.sulfurcavesplus.cinnabar_copper_ore": "Cinnabar Copper Ore",
+  "block.sulfurcavesplus.cinnabar_redstone_ore": "Cinnabar Redstone Ore",
+  "block.sulfurcavesplus.cinnabar_lapis_ore": "Cinnabar Lapis Lazuli Ore",
+  "block.sulfurcavesplus.cinnabar_diamond_ore": "Cinnabar Diamond Ore",
+  "block.sulfurcavesplus.cinnabar_emerald_ore": "Cinnabar Emerald Ore",
+
+  "item.sulfurcavesplus.sulfur_coal_ore": "Sulfur Coal Ore",
+  "item.sulfurcavesplus.sulfur_iron_ore": "Sulfur Iron Ore",
+  "item.sulfurcavesplus.sulfur_gold_ore": "Sulfur Gold Ore",
+  "item.sulfurcavesplus.sulfur_copper_ore": "Sulfur Copper Ore",
+  "item.sulfurcavesplus.sulfur_redstone_ore": "Sulfur Redstone Ore",
+  "item.sulfurcavesplus.sulfur_lapis_ore": "Sulfur Lapis Lazuli Ore",
+  "item.sulfurcavesplus.sulfur_diamond_ore": "Sulfur Diamond Ore",
+  "item.sulfurcavesplus.sulfur_emerald_ore": "Sulfur Emerald Ore",
+
+  "item.sulfurcavesplus.cinnabar_coal_ore": "Cinnabar Coal Ore",
+  "item.sulfurcavesplus.cinnabar_iron_ore": "Cinnabar Iron Ore",
+  "item.sulfurcavesplus.cinnabar_gold_ore": "Cinnabar Gold Ore",
+  "item.sulfurcavesplus.cinnabar_copper_ore": "Cinnabar Copper Ore",
+  "item.sulfurcavesplus.cinnabar_redstone_ore": "Cinnabar Redstone Ore",
+  "item.sulfurcavesplus.cinnabar_lapis_ore": "Cinnabar Lapis Lazuli Ore",
+  "item.sulfurcavesplus.cinnabar_diamond_ore": "Cinnabar Diamond Ore",
+  "item.sulfurcavesplus.cinnabar_emerald_ore": "Cinnabar Emerald Ore",
+
+  "subtitles.sulfurcavesplus.corrosion_tick": "Armor corrodes",
+  "advancements.husbandry.steamed_hams.title": "Steamed Hams",
+  "advancements.husbandry.steamed_hams.description": "Ride a pig into a hot geyser",
+  "gamerule.sulfurcavesplus.lava_geyser_damage": "Lava Geyser Damage",
+  "gamerule.sulfurcavesplus.lava_geyser_damage.description": "Controls whether lava geysers deal fire damage to entities within them."
+}

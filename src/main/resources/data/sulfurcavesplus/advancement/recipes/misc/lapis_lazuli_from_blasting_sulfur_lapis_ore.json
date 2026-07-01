@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sulfur_lapis_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sulfurcavesplus:sulfur_lapis_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sulfurcavesplus:lapis_lazuli_from_blasting_sulfur_lapis_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sulfur_lapis_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sulfurcavesplus:lapis_lazuli_from_blasting_sulfur_lapis_ore"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "CC0-1.0"
+
+[[mods]]
+modId = "sulfurcavesplus"
+version = "${version}"
+displayName = "Sulfur Caves Plus"
+authors = "CrossFace22"
+logoFile = "assets/sulfurcavesplus/icon.png"
+description = "A mod that adds new content to the Sulfur Caves biome: Sulfur Spiders, Corrosion and more."
+
+[[mixins]]
+config = "sulfurcavesplus.mixins.json"
+
+[[mixins]]
+config = "sulfurcavesplus.client.mixins.json"
+
+[[dependencies.sulfurcavesplus]]
+modId = "minecraft"
+type = "required"
+versionRange = "[26.2]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.sulfurcavesplus]]
+modId = "neoforge"
+type = "required"
+versionRange = "[26.2.0.0-beta,)"
+ordering = "NONE"
+side = "BOTH"
+

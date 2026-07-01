@@ -37,12 +37,6 @@ public class SulfurCavesPlus implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ScpConfig cfg = ScpConfig.INSTANCE;
-        LOGGER.info("[SCP] Config — corrosionInterval={} durabilityPerTick={} " +
-                        "spiderNormal={}t spiderHard={}t potentSulfur={}t",
-                cfg.corrosionTickInterval, cfg.durabilityDamagePerTick,
-                cfg.spiderCorrosionDurationNormal, cfg.spiderCorrosionDurationHard,
-                cfg.potentSulfurEffectDuration);
 
         ScpEffects.register();
         ScpSounds.register();
@@ -52,6 +46,7 @@ public class SulfurCavesPlus implements ModInitializer {
         ScpItems.register();
         ScpFeatures.register();
         ScpGameRules.register();
+        ScpEntitySubPredicates.register();
 
         BiomeModifications.addFeature(
                 BiomeSelectors.includeByKey(Biomes.BASALT_DELTAS),
@@ -73,7 +68,5 @@ public class SulfurCavesPlus implements ModInitializer {
         FabricPotionBrewingBuilder.BUILD.register(builder -> {
             builder.registerPotionRecipe(ScpPotions.CORROSION, Ingredient.of(Items.GLOWSTONE_DUST), ScpPotions.STRONG_CORROSION);
         });
-
-        LOGGER.info("[SCP] Sulfur Caves Plus initialized.");
     }
 }

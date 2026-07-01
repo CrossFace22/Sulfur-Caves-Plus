@@ -7,11 +7,6 @@ import net.minecraft.world.level.gamerules.GameRule;
 import net.minecraft.world.level.gamerules.GameRuleCategory;
 
 public final class ScpGameRules {
-    public static final GameRule<Boolean> NOXIOUS_GAS_ON_GEYSERS = registerBoolean(
-            "noxious_gas_on_geysers",
-            GameRuleCategory.UPDATES,
-            false
-    );
 
     public static final GameRule<Boolean> LAVA_GEYSERS_DAMAGE = registerBoolean(
             "lava_geyser_damage",

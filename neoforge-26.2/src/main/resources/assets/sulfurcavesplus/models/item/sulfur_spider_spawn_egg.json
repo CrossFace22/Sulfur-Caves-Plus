@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "sulfurcavesplus:item/sulfur_spider_spawn_egg"
+  }
+}

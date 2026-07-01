@@ -57,9 +57,9 @@
   "item.sulfurcavesplus.cinnabar_emerald_ore": "Cinnabar Emerald Ore",
 
   "subtitles.sulfurcavesplus.corrosion_tick": "Armor corrodes",
+  "advancements.husbandry.steamed_hams.title": "Steamed Hams",
+  "advancements.husbandry.steamed_hams.description": "Ride a pig into a geyser",
 
   "gamerule.sulfurcavesplus.lava_geyser_damage": "Lava Geyser Damage",
-  "gamerule.sulfurcavesplus.lava_geyser_damage.description": "Controls whether lava geysers deal fire damage to entities within them.",
-  "gamerule.sulfurcavesplus.noxious_gas_on_geysers": "Noxious Gas on Geysers",
-  "gamerule.sulfurcavesplus.noxious_gas_on_geysers.description": "Controls whether noxious gas is released from geysers."
+  "gamerule.sulfurcavesplus.lava_geyser_damage.description": "Controls whether lava geysers deal fire damage to entities within them."
 }
